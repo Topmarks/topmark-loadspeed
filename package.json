@@ -4,6 +4,7 @@
   "description": "Topmarks plugin for checking page loadspeed",
   "main": "./lib/loadspeed.js",
   "scripts": {
+    "prepublish": "npm run compile",
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "babel --presets es2015 --plugins add-module-exports -d lib/ src/",
     "compile-watch": "babel --watch --presets es2015 --plugins add-module-exports -d lib/ src/"
