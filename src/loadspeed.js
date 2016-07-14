@@ -15,12 +15,12 @@ let loadspeed = (app, options) => {
           app.Chrome.Close({port: options.port, id: tab.id}).then(() => {
             app.root.addResults(options.url,module.exports.attributes.name,app.loadtime);
             resolve();
-          }).catch(err => reject(err));
+          });
         });
         chrome.once('ready', () => {
           chrome.Page.navigate({url: options.url});
         });
-      }).catch(err => reject(err));
+      });
     }).catch(err => reject(err));
   });
 }
