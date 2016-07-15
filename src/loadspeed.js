@@ -14,6 +14,7 @@ let loadspeed = (app, options) => {
           app.loadtime = parseFloat(requestEndTime) - parseFloat(requestStartTime);
           app.Chrome.Close({port: options.port, id: tab.id}).then(() => {
             app.root.addResults(options.url,module.exports.attributes.name,app.loadtime);
+            chrome.close();
             resolve();
           });
         });
