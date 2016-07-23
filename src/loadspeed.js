@@ -8,15 +8,13 @@ let loadspeed = (app, options) => {
   let chromeHelper = new ChromeHelper(options.port, "about:blank");
   return chromeHelper.startupChrome()
     .then((results) => {
-      chrome = results[1];
-      chrome.Network.enable();
-      chrome.Page.enable();
-      chrome.Network.requestWillBeSent(params => {
-        requestStartTime = (typeof requestStartTime != 'undefined')? requestStartTime: params.timestamp;
-      });
-    })
-    .then(() => {
       return new Promise((resolve, reject) => {
+        chrome = results[1];
+        chrome.Network.enable();
+        chrome.Page.enable();
+        chrome.Network.requestWillBeSent(params => {
+          requestStartTime = (typeof requestStartTime != 'undefined')? requestStartTime: params.timestamp;
+        });
         chrome.Page.loadEventFired(params => {
           requestEndTime = params.timestamp;
           loadtime = parseFloat(requestEndTime) - parseFloat(requestStartTime);
@@ -28,8 +26,7 @@ let loadspeed = (app, options) => {
         });
       });
     })
-    .then(() => chromeHelper.shutdownChrome())
-    .then(() => console.log(chromeHelper.chrome.ws.readyState));
+    .then(() => chromeHelper.shutdownChrome());
 }
 
 loadspeed.attributes = {
