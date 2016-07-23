@@ -1,29 +1,35 @@
+import ChromeHelper from 'chrome-helper';
+
 let loadspeed = (app, options) => {
   let requestStartTime,
-      requestEndTime;
-  return new Promise((resolve, reject) => {
-    app.Chrome.New({port: options.port, url: "about:blank"}).then((tab) => {
-      app.Chrome({port: options.port}).then((chrome) => {
-        chrome.Network.enable();
-        chrome.Page.enable();
-        chrome.Network.requestWillBeSent(params => {
-          requestStartTime = (typeof requestStartTime != 'undefined')? requestStartTime: params.timestamp;
-        });
+      requestEndTime,
+      loadtime,
+      chrome;
+  let chromeHelper = new ChromeHelper(options.port, "about:blank");
+  return chromeHelper.startupChrome()
+    .then((results) => {
+      chrome = results[1];
+      chrome.Network.enable();
+      chrome.Page.enable();
+      chrome.Network.requestWillBeSent(params => {
+        requestStartTime = (typeof requestStartTime != 'undefined')? requestStartTime: params.timestamp;
+      });
+    })
+    .then(() => {
+      return new Promise((resolve, reject) => {
         chrome.Page.loadEventFired(params => {
           requestEndTime = params.timestamp;
-          app.loadtime = parseFloat(requestEndTime) - parseFloat(requestStartTime);
-          app.Chrome.Close({port: options.port, id: tab.id}).then(() => {
-            app.root.addResults(options.url,module.exports.attributes.name,app.loadtime);
-            chrome.close();
-            resolve();
-          });
+          loadtime = parseFloat(requestEndTime) - parseFloat(requestStartTime);
+          app.root.addResults(options.url, module.exports.attributes.name, loadtime);
+          resolve();
         });
         chrome.once('ready', () => {
           chrome.Page.navigate({url: options.url});
         });
       });
-    }).catch(err => reject(err));
-  });
+    })
+    .then(() => chromeHelper.shutdownChrome())
+    .then(() => console.log(chromeHelper.chrome.ws.readyState));
 }
 
 loadspeed.attributes = {

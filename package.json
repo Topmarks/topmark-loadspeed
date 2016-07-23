@@ -31,5 +31,8 @@
     "mocha-lcov-reporter": "^1.2.0",
     "nyc": "^7.0.0",
     "topmarks": "*"
+  },
+  "dependencies": {
+    "chrome-helper": "^0.1.2"
   }
 }
