@@ -1,6 +1,6 @@
 {
   "name": "topmark-loadspeed",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Topmarks plugin for checking page loadspeed",
   "main": "./lib/loadspeed.js",
   "scripts": {
@@ -20,6 +20,15 @@
   },
   "author": "Garth Braithwaite <garthdb@gmail.com> (http://garthdb.com)",
   "license": "Apache-2.0",
+  "keywords": [
+    "topmarks",
+    "plugin",
+    "performance",
+    "topmarks-plugin"
+  ],
+  "peerDependencies": {
+    "topmarks": "1.x.x"
+  },
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
@@ -30,7 +39,7 @@
     "mocha": "^2.5.3",
     "mocha-lcov-reporter": "^1.2.0",
     "nyc": "^7.0.0",
-    "topmarks": "file:///Users/garthdb/Topmarks/topmarks"
+    "topmarks": "*"
   },
   "dependencies": {
     "chrome-helper": "^0.1.2"

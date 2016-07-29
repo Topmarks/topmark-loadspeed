@@ -1,4 +1,6 @@
 src/
 test/
-.babelrc
-.travs.yml
+.*
+.nyc_output
+coverage
+inch.json
