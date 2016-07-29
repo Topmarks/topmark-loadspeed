@@ -1,6 +1,6 @@
 {
   "name": "topmark-loadspeed",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Topmarks plugin for checking page loadspeed",
   "main": "./lib/loadspeed.js",
   "scripts": {
