@@ -30,7 +30,7 @@
     "mocha": "^2.5.3",
     "mocha-lcov-reporter": "^1.2.0",
     "nyc": "^7.0.0",
-    "topmarks": "*"
+    "topmarks": "file:///Users/garthdb/Topmarks/topmarks"
   },
   "dependencies": {
     "chrome-helper": "^0.1.2"

@@ -18,7 +18,7 @@ let loadspeed = (app, options) => {
         chrome.Page.loadEventFired(params => {
           requestEndTime = params.timestamp;
           loadtime = parseFloat(requestEndTime) - parseFloat(requestStartTime);
-          app.root.addResults(options.url, module.exports.attributes.name, loadtime);
+          app.addResults(loadtime);
           resolve();
         });
         chrome.once('ready', () => {
