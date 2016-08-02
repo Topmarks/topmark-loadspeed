@@ -15,7 +15,7 @@
   },
   "keywords": [
     "topmarks-plugin",
-    "scrolling",
+    "loading",
     "performance",
     "browser"
   ],
@@ -40,7 +40,7 @@
   "author": "Garth Braithwaite <garthdb@gmail.com> (http://garthdb.com)",
   "license": "Apache-2.0",
   "peerDependencies": {
-    "topmarks": "1.0.0"
+    "topmarks": "1.x.x"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -60,6 +60,6 @@
     "topmarks": "*"
   },
   "dependencies": {
-    "chrome-helper": "^0.2.0"
+    "chrome-helper": "^1.0.0"
   }
 }
