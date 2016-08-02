@@ -1,6 +1,6 @@
 # Loadspeed
 
-[![Build Status](https://travis-ci.org/Topmarks/topmark-loadspeed.svg?branch=master)](https://travis-ci.org/Topmarks/topmark-loadspeed) [![Coverage Status](https://coveralls.io/repos/github/Topmarks/topmark-loadspeed/badge.svg?branch=master)](https://coveralls.io/github/Topmarks/topmark-loadspeed?branch=master) [![npm version](https://badge.fury.io/js/topmark-loadspeed.svg)](https://badge.fury.io/js/topmark-loadspeed)
+[![Build Status](https://travis-ci.org/Topmarks/topmark-loadspeed.svg?branch=master)](https://travis-ci.org/Topmarks/topmark-loadspeed) [![Code Climate](https://codeclimate.com/github/Topmarks/topmark-loadspeed/badges/gpa.svg)](https://codeclimate.com/github/Topmarks/topmark-loadspeed) [![Test Coverage](https://codeclimate.com/github/Topmarks/topmark-loadspeed/badges/coverage.svg)](https://codeclimate.com/github/Topmarks/topmark-loadspeed/coverage) [![Issue Count](https://codeclimate.com/github/Topmarks/topmark-loadspeed/badges/issue_count.svg)](https://codeclimate.com/github/Topmarks/topmark-loadspeed) [![Dependency Status](https://david-dm.org/topmarks/topmark-loadspeed.svg)](https://david-dm.org/topmarks/topmark-loadspeed) [![Inline docs](http://inch-ci.org/github/Topmarks/topmark-loadspeed.svg?branch=master)](http://inch-ci.org/github/Topmarks/topmark-loadspeed) [![npm version](https://badge.fury.io/js/topmark-loadspeed.svg)](https://badge.fury.io/js/topmark-loadspeed)
 
 A [Topmarks](http://github.com/topmarks/topmarks) plugin to automate the testing of a website's loadspeed in chrome.
 
