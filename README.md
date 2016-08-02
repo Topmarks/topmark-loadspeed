@@ -4,6 +4,14 @@
 
 A [Topmarks](http://github.com/topmarks/topmarks) plugin to automate the testing of a website's loadspeed in chrome.
 
+## Installation
+
+Install from npm [npm](https://docs.npmjs.com/getting-started/installing-node).
+
+```sh
+npm install topmark-loadspeed
+```
+
 ## Usage
 
 ### Nodejs
